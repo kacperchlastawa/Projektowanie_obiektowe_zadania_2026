@@ -13,7 +13,7 @@ Projekt realizuje algorytm sortowania bąbelkowego w języku Pascal wraz z testa
 
 ## Instrukcja uruchomienia
 
-### Opcja 1: Przez skrypt Bash (Rekomendowane)
+### Przez skrypt Bash
 Linux, macOS lub Git Bash na Windowsie, uruchom:
 ```bash
 ./run.sh
