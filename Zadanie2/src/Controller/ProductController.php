@@ -8,10 +8,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 #[Route('/api/product')]
 class ProductController extends AbstractController
 {
+    #[Route('/view', name: 'product_view', methods: ['GET'])]
+    public function view(ProductRepository $repo): Response {
+    return $this->render('product/index.html.twig', [
+        'products' => $repo->findAll()
+    ]);
+}
     // LISTA PRODUKTÓW (READ)
     #[Route('', methods: ['GET'])]
     public function index(ProductRepository $repo): JsonResponse
@@ -43,4 +50,5 @@ class ProductController extends AbstractController
 
         return $this->json(['status' => 'Created', 'id' => $product->getId()], 201);
     }
+
 }

@@ -1,0 +1,17 @@
+<h1>Lista Produktów</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nazwa</th>
+        <th>Cena</th>
+    </tr>
+    {% for p in products %}
+    <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.name }}</td>
+        <td>{{ p.price }} zł</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<a href="/category/view">Zobacz Kategorie</a> | <a href="/customer/view">Zobacz Klientów</a>

@@ -1,0 +1,23 @@
+<h1>Lista Klientów</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Nazwisko</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in customers %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.email }}</td>
+            <td>{{ c.lastName }}</td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="3">Brak klientów w bazie danych.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

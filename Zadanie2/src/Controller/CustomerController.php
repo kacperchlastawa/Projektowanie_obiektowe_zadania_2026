@@ -8,9 +8,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 #[Route('/api/customer')]
 class CustomerController extends AbstractController {
+
+    #[Route('/view', name: 'customer_view', methods: ['GET'])]
+    public function view(CustomerRepository $repo): Response {
+        $allCustomers = $repo->findAll();
+        return $this->render('customer/index.html.twig', [
+            'customers' => $allCustomers
+        ]);
+    }
     #[Route('', methods: ['GET'])]
     public function index(CustomerRepository $repo): JsonResponse {
         return $this->json($repo->findAll());
