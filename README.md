@@ -31,6 +31,11 @@ Aplikacja webowa na bazie frameworka Symfony na obrazie `kprzystalski/projobj-ph
 | ✅ 4.5 | Widoki do wszystkich kontrolerów | [Link do commita 4 (4.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/3c75768258ffba47fe23b64b3d1fb1e6bfb6e07d) |
 | ✅ 5.0 | Panel administracyjny | [Link do commita 5 (5.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/a47d582120b72878df99b42c166c9f18f95f5f0e) |
 
+film: 
+
+https://github.com/user-attachments/assets/1a068998-3000-45df-a9fd-79cb8d69944e
+
+
 ----------------
 # Zadanie 4 - Wzorce strukturalne
 
