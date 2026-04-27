@@ -10,6 +10,11 @@
 | ✅ 4.5 | Testy jednostkowe testujące procedury | [Link do commita 4 (4.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/65341ac9a2348a06abc0b4b0ceda1a96d9ec785d) |
 | ✅ 5.0 | Skrypt w bashu do uruchamiania aplikacji w Pascalu via Docker | [Link do commita 5 (5.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/e6b7f5ff3c553c01d425b30d56e778de753e6b5c) |
 
+film : 
+
+https://github.com/user-attachments/assets/7cfcfd70-dfb0-4037-b672-f26dbb6dc124
+
+
 ---
 
 # Zadanie 2 - Wzorce architektury
