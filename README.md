@@ -27,21 +27,16 @@ Aplikacja webowa na bazie frameworka Symfony na obrazie `kprzystalski/projobj-ph
 | ✅ 5.0 | Panel administracyjny | [Link do commita 5 (5.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/a47d582120b72878df99b42c166c9f18f95f5f0e) |
 
 ----------------
-Zadanie 4 Wzorce strukturalne
+# Zadanie 4 - Wzorce strukturalne
 
-Echo (Go)
-Należy stworzyć aplikację w Go na frameworku echo. Aplikacja ma mieć
-jeden endpoint, minimum jedną funkcję proxy, która pobiera dane np. o
-pogodzie, giełdzie, etc. (do wyboru) z zewnętrznego API. Zapytania do
-endpointu można wysyłać w jako GET lub POST.
+## Echo (Go)
 
-✅3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie
-miała kontroler Pogody, która pozwala na pobieranie danych o pogodzie
-(lub akcjach giełdowych)
-3.5 Należy stworzyć model Pogoda (lub Giełda) wykorzystując gorm, a
-dane załadować z listy przy uruchomieniu
-4.0 Należy stworzyć klasę proxy, która pobierze dane z serwisu
-zewnętrznego podczas zapytania do naszego kontrolera
-4.5 Należy zapisać pobrane dane z zewnątrz do bazy danych
-5.0 Należy rozszerzyć endpoint na więcej niż jedną lokalizację
-(Pogoda), lub akcje (Giełda) zwracając JSONa
+Aplikacja w Go na frameworku `echo` z minimum jednym endpointem i funkcją proxy pobierającą dane z zewnętrznego API (pogoda, giełda itp.). Zapytania można wysyłać jako GET lub POST.
+
+| Ocena | Opis | Commit |
+|-------|------|--------|
+| ✅ 3.0 | Aplikacja we frameworku Echo w Go z kontrolerem Pogody, umożliwiającym pobieranie danych o pogodzie lub akcjach giełdowych | [Link do commita 1 (3.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/981f29516f684e9b0fcd05de4a8f1cbccb35678b) |
+| ✅ 3.5 | Model Pogoda (lub Giełda) z wykorzystaniem `gorm`, dane ładowane z listy przy uruchomieniu | [Link do commita 2 (3.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/58f82e311582635b379c853ef4fe9daacd7b5497) |
+| ✅ 4.0 | Klasa proxy pobierająca dane z zewnętrznego serwisu podczas zapytania do kontrolera | [Link do commita 3 (4.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/f3de77e67379b639c1729a95a5aa4dbe9c214ff4) |
+| ✅ 4.5 | Zapis pobranych danych zewnętrznych do bazy danych | [Link do commita 4 (4.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/8793fc341aca532132dcca9920cc45784ba03df4) |
+| ⬜ 5.0 | Rozszerzenie endpointu na więcej niż jedną lokalizację (Pogoda) lub akcję (Giełda), zwracające JSON | — |
