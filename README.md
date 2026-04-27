@@ -25,3 +25,23 @@ Aplikacja webowa na bazie frameworka Symfony na obrazie `kprzystalski/projobj-ph
 | ✅ 4.0 | Dwa dodatkowe kontrolery wraz z modelami (JSON) | [Link do commita 3 (4.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/fb3d534b7ab6c275e3f4857e13730d2350b4dc2f) |
 | ✅ 4.5 | Widoki do wszystkich kontrolerów | [Link do commita 4 (4.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/3c75768258ffba47fe23b64b3d1fb1e6bfb6e07d) |
 | ✅ 5.0 | Panel administracyjny | [Link do commita 5 (5.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/a47d582120b72878df99b42c166c9f18f95f5f0e) |
+
+----------------
+Zadanie 4 Wzorce strukturalne
+
+Echo (Go)
+Należy stworzyć aplikację w Go na frameworku echo. Aplikacja ma mieć
+jeden endpoint, minimum jedną funkcję proxy, która pobiera dane np. o
+pogodzie, giełdzie, etc. (do wyboru) z zewnętrznego API. Zapytania do
+endpointu można wysyłać w jako GET lub POST.
+
+✅3.0 Należy stworzyć aplikację we frameworki echo w j. Go, która będzie
+miała kontroler Pogody, która pozwala na pobieranie danych o pogodzie
+(lub akcjach giełdowych)
+3.5 Należy stworzyć model Pogoda (lub Giełda) wykorzystując gorm, a
+dane załadować z listy przy uruchomieniu
+4.0 Należy stworzyć klasę proxy, która pobierze dane z serwisu
+zewnętrznego podczas zapytania do naszego kontrolera
+4.5 Należy zapisać pobrane dane z zewnątrz do bazy danych
+5.0 Należy rozszerzyć endpoint na więcej niż jedną lokalizację
+(Pogoda), lub akcje (Giełda) zwracając JSONa
