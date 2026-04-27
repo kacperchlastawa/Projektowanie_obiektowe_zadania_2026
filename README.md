@@ -50,3 +50,9 @@ Aplikacja w Go na frameworku `echo` z minimum jednym endpointem i funkcją proxy
 | ✅ 4.0 | Klasa proxy pobierająca dane z zewnętrznego serwisu podczas zapytania do kontrolera | [Link do commita 3 (4.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/f3de77e67379b639c1729a95a5aa4dbe9c214ff4) |
 | ✅ 4.5 | Zapis pobranych danych zewnętrznych do bazy danych | [Link do commita 4 (4.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/8793fc341aca532132dcca9920cc45784ba03df4) |
 | ⬜ 5.0 | Rozszerzenie endpointu na więcej niż jedną lokalizację (Pogoda) lub akcję (Giełda), zwracające JSON | — |
+
+film : 
+
+https://github.com/user-attachments/assets/0859bf7c-f81e-4f52-898b-33f4861cacc7
+
+
