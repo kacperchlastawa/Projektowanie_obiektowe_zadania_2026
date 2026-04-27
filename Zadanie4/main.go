@@ -32,7 +32,7 @@ func (wp *WeatherProxy) FetchFromAPI(city string) (string, error) {
 	cityLower := strings.ToLower(city)
 	coord, exists := coords[cityLower]
 	if !exists {
-		return "", fmt.Errorf("nieobsługiwane miasto w zewnętrznym API (spróbuj Warszawa, Krakow)")
+		return "", fmt.Errorf("nieobsługiwane miasto w zewnętrznym API")
 	}
 
 	url := fmt.Sprintf("https://api.open-meteo.com/v1/forecast?%s&current_weather=true", coord)
@@ -80,14 +80,19 @@ func (wc *WeatherController) GetWeather(c echo.Context) error {
 		tempFromAPI, err := wc.Proxy.FetchFromAPI(city)
 		if err != nil {
 			return c.JSON(http.StatusNotFound, map[string]string{
-				"error": "Brak danych w bazie i błąd zewnętrznego API: " + err.Error(),
+				"error": "Błąd: " + err.Error(),
 			})
 		}
 
-		return c.JSON(http.StatusOK, map[string]string{
-			"source":      "Zewnętrzne API (Proxy)",
-			"city":        city,
-			"temperature": tempFromAPI,
+		weatherData = Weather{
+			City:        city,
+			Temperature: tempFromAPI,
+		}
+		wc.DB.Create(&weatherData)
+
+		return c.JSON(http.StatusOK, map[string]interface{}{
+			"source": "Zewnętrzne API (Zapisano do bazy)",
+			"data":   weatherData,
 		})
 	}
 
@@ -100,7 +105,7 @@ func (wc *WeatherController) GetWeather(c echo.Context) error {
 func main() {
 	db, err := gorm.Open(sqlite.Open("weather.db"), &gorm.Config{})
 	if err != nil {
-		panic("Nie udało się połączyć z bazą danych")
+		panic("Błąd bazy danych")
 	}
 
 	db.AutoMigrate(&Weather{})
@@ -108,10 +113,7 @@ func main() {
 	var count int64
 	db.Model(&Weather{}).Count(&count)
 	if count == 0 {
-		initialWeatherList := []Weather{
-			{City: "Warszawa", Temperature: "15°C"},
-		}
-		db.Create(&initialWeatherList)
+		db.Create(&Weather{City: "Warszawa", Temperature: "15°C"})
 	}
 
 	e := echo.New()
