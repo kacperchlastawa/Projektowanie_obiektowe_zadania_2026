@@ -96,4 +96,8 @@ begin
     for i := 0 to High(MyArray) do
         Write(MyArray[i], ' ');
     Writeln;
+    
+    Writeln;
+    Writeln('Nacisnij Enter, aby zamknac program...');
+    Readln;
 end.

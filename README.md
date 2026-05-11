@@ -37,6 +37,43 @@ https://github.com/user-attachments/assets/1a068998-3000-45df-a9fd-79cb8d69944e
 
 
 ----------------
+# Zadanie 3 - Wzorce kreacyjne
+
+## Spring Boot (Kotlin)
+
+Proszę stworzyć prosty serwis do autoryzacji, który zasymuluje autoryzację użytkownika za pomocą przesłanej nazwy użytkownika oraz hasła. Serwis powinien zostać wstrzyknięty do kontrolera (4.5). Aplikacja ma oczywiście zawierać jeden kontroler i powinna zostać napisana w języku Kotlin. Oparta powinna zostać na frameworku Spring Boot. Serwis do autoryzacji powinien być singletonem.
+
+| Ocena | Opis |
+|-------|------|
+| ✅ 3.0 | Stworzenie jednego kontrolera wraz z danymi wyświetlanymi z listy na endpoint'cie w formacie JSON |
+| ✅ 3.5 | Stworzenie klasy do autoryzacji (mock) jako Singleton w formie eager |
+| ✅ 4.0 | Obsługa danych autoryzacji przekazywanych przez użytkownika |
+| ✅ 4.5 | Wstrzyknięcie singletona do głównej klasy via constructor injection |
+
+Wywołania:
+
+```powershell
+PS C:\Users\kchl\Desktop\STUDIA\2 stopień\2 semestr\Projektowanie_obiektowe\Projektowanie_obiektowe_zadania_2026>       
+Invoke-RestMethod -Uri "http://localhost:8080/api/users" -Method GET
+>>
+
+id username        
+-- --------        
+ 1 admin_test      
+ 2 user_jankowalski
+ 3 guest_123       
+
+
+PS C:\Users\kchl\Desktop\STUDIA\2 stopień\2 semestr\Projektowanie_obiektowe\Projektowanie_obiektowe_zadania_2026> Invoke-RestMethod -Uri "http://localhost:8080/api/users/auth" -Method POST -Headers @{"Content-Type"="application/json"} -Body '{"username":"admin", "password":"secret123"}'
+>>
+Autoryzacja przebiegła pomyślnie!
+PS C:\Users\kchl\Desktop\STUDIA\2 stopień\2 semestr\Projektowanie_obiektowe\Projektowanie_obiektowe_zadania_2026> Invoke-RestMethod -Uri "http://localhost:8080/api/users/auth" -Method POST -Headers @{"Content-Type"="application/json"} -Body '{"username":"admin", "password":"złe_haslo"}'
+>>
+Błąd autoryzacji. Zły użytkownik lub hasło.
+PS C:\Users\kchl\Desktop\STUDIA\2 stopień\2 semestr\Projektowanie_obiektowe\Projektowanie_obiektowe_zadania_2026> 
+```
+
+----------------
 # Zadanie 4 - Wzorce strukturalne
 
 ## Echo (Go)

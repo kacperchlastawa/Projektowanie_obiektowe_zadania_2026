@@ -10,4 +10,4 @@ echo ""
 echo "2. Uruchamianie aplikacji w kontenerze..."
 echo "-----------------------------------------"
 
-docker run --rm $IMAGE_NAME
+docker run --rm -it $IMAGE_NAME
