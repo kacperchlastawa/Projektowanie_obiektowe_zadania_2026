@@ -1,8 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useCart } from '../context/CartContext';
 
 const Platnosci: React.FC = () => {
-  const [amount, setAmount] = useState<number>(0);
+  const { cartTotal } = useCart();
+
+  const [amount, setAmount] = useState<number>(cartTotal);
   const [status, setStatus] = useState<string>('');
+
+  useEffect(() => {
+    setAmount(cartTotal);
+  }, [cartTotal]);
 
   const handlePayment = () => {
     fetch('http://localhost:8080/api/payments', {
@@ -35,7 +42,7 @@ const Platnosci: React.FC = () => {
         />
         <span> PLN</span>
       </div>
-      <button onClick={handlePayment}>Zrealizuj Płatność</button>
+      <button onClick={handlePayment} disabled={amount <= 0}>Zrealizuj Płatność</button>
       {status && <p><strong>Status:</strong> {status}</p>}
     </div>
   );

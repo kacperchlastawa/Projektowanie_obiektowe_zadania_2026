@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-}
+import { useCart } from '../context/CartContext';
+import type { Product } from '../context/CartContext';
 
 const Produkty: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+
+  const { addToCart } = useCart();
 
   useEffect(() => {
     fetch('http://localhost:8080/api/products')
@@ -37,7 +35,10 @@ const Produkty: React.FC = () => {
       <h2>Lista Produktów</h2>
       <ul>
         {products.map(p => (
-          <li key={p.id}>{p.name} - {p.price} PLN</li>
+          <li key={p.id} style={{ marginBottom: '10px' }}>
+            {p.name} - {p.price.toFixed(2)} PLN{' '}
+            <button onClick={() => addToCart(p)}>Dodaj do koszyka</button>
+          </li>
         ))}
       </ul>
     </div>
