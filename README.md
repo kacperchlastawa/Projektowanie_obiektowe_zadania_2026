@@ -101,7 +101,7 @@ Aplikacja kliencka w React (Vite) oraz mock-serwer w Node.js (Express), uruchami
 
 | Ocena | Opis | Commit |
 |-------|------|--------|
-| ✅ 3.0 | Stworzenie komponentów Produkty (pobieranie z serwera) i Płatności (wysyłanie do serwera) |https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/e1b8fe50612d70a620c6a85175612d3f17c6c9d8|
-| ✅ 3.5 | Dodanie komponentu Koszyk z osobnym widokiem; obsługa routingu między widokami | https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/d5261585a7bf421feb1fa9b61c7e4d1a505e09c7 |
-| ✅ 4.0 | Przekazywanie danych (stan koszyka) pomiędzy komponentami z użyciem React hooks (Context API / useState) |https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/9ec5ce9da9d61d4a840776e2af3effb53567a353|
-| ✅ 4.5 | Konfiguracja umożliwiająca uruchomienie aplikacji klienckiej i serwerowej w kontenerach Docker (docker-compose) |https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/76796f766062214516cc1a920780d3849d8f52b9|
+| ✅ 3.0 | Stworzenie komponentów Produkty (pobieranie z serwera) i Płatności (wysyłanie do serwera) |[Link do commita 1 (3.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/e1b8fe50612d70a620c6a85175612d3f17c6c9d8)|
+| ✅ 3.5 | Dodanie komponentu Koszyk z osobnym widokiem; obsługa routingu między widokami | [Link do commita 2 (3.5)] (https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/d5261585a7bf421feb1fa9b61c7e4d1a505e09c7) |
+| ✅ 4.0 | Przekazywanie danych (stan koszyka) pomiędzy komponentami z użyciem React hooks (Context API / useState) |[Link do commita 3 (4.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/9ec5ce9da9d61d4a840776e2af3effb53567a353)|
+| ✅ 4.5 | Konfiguracja umożliwiająca uruchomienie aplikacji klienckiej i serwerowej w kontenerach Docker (docker-compose) |[Link do commita 4 (4.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/76796f766062214516cc1a920780d3849d8f52b9)|
