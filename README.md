@@ -105,3 +105,11 @@ Aplikacja kliencka w React (Vite) oraz mock-serwer w Node.js (Express), uruchami
 | ✅ 3.5 | Dodanie komponentu Koszyk z osobnym widokiem; obsługa routingu między widokami | [Link do commita 2 (3.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/d5261585a7bf421feb1fa9b61c7e4d1a505e09c7)|
 | ✅ 4.0 | Przekazywanie danych (stan koszyka) pomiędzy komponentami z użyciem React hooks (Context API / useState) |[Link do commita 3 (4.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/9ec5ce9da9d61d4a840776e2af3effb53567a353)|
 | ✅ 4.5 | Konfiguracja umożliwiająca uruchomienie aplikacji klienckiej i serwerowej w kontenerach Docker (docker-compose) |[Link do commita 4 (4.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/76796f766062214516cc1a920780d3849d8f52b9)|
+
+
+film : 
+
+
+https://github.com/user-attachments/assets/71c470f6-4e93-4299-a865-87e317dd24ba
+
+
