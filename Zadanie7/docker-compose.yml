@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  vaporApp:
+    image: swift:5.9
+    container_name: vapor_app
+    volumes:
+      - .:/app
+      - vapor_build:/app/.build
+    working_dir: /app
+    ports:
+      - "8080:8080"
+    command: swift run App serve --hostname 0.0.0.0 --port 8080
+
+volumes:
+  vapor_build:
