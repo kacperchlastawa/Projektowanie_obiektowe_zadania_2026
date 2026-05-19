@@ -121,5 +121,5 @@ Należy sprawdzić kod projektów JS, Kotlin, Go pod kątem jakości. Na ten mom
 
 | Ocena | Opis | Commit |
 |-------|------|--------|
-| ✅ 3.0 | Skonfigurowano husky + lint-staged uruchamiające lintowanie przed commitem dla kodu JS | [Link do commita 1 (3.0)]() |
-| ✅ 3.5 | Wyeliminowano bugi zidentyfikowane przez Sonar/linter w kodzie aplikacji klienckiej | [Link do commita 2 (3.5)]() |
+| ✅ 3.0 | Skonfigurowano husky + lint-staged uruchamiające lintowanie przed commitem dla kodu JS | [Link do commita 1 (3.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/70fa2e47e5d318898444638d311767918e0f2623) |
+| ✅ 3.5 | Wyeliminowano bugi zidentyfikowane przez Sonar/linter w kodzie aplikacji klienckiej | [Link do commita 2 (3.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/70fa2e47e5d318898444638d311767918e0f2623) |
