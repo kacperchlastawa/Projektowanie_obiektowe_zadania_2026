@@ -10,7 +10,7 @@ function App() {
     <CartProvider>
       <Router>
         <div className="App" style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-          <h1>Aplikacja Sklepowa (Zadanie 5)</h1>
+          <h1>Aplikacja Sklepowa</h1>
           
           {/* Nawigacja */}
           <nav style={{ marginBottom: '20px', padding: '10px', backgroundColor: '#f0f0f0', borderRadius: '5px' }}>

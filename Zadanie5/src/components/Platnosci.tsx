@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useCart } from '../context/CartContext';
 
 const Platnosci: React.FC = () => {
@@ -6,10 +6,12 @@ const Platnosci: React.FC = () => {
 
   const [amount, setAmount] = useState<number>(cartTotal);
   const [status, setStatus] = useState<string>('');
+  const [prevCartTotal, setPrevCartTotal] = useState<number>(cartTotal);
 
-  useEffect(() => {
+  if (cartTotal !== prevCartTotal) {
+    setPrevCartTotal(cartTotal);
     setAmount(cartTotal);
-  }, [cartTotal]);
+  }
 
   const handlePayment = () => {
     fetch('http://localhost:8080/api/payments', {

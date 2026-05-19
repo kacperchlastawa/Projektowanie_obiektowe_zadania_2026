@@ -112,4 +112,14 @@ film :
 
 https://github.com/user-attachments/assets/71c470f6-4e93-4299-a865-87e317dd24ba
 
+----------------
+# Zadanie 6 - Kontrola jakości kodu
 
+## Projekt JS
+
+Należy sprawdzić kod projektów JS, Kotlin, Go pod kątem jakości. Na ten moment zrealizowano pierwsze punkty dla JS.
+
+| Ocena | Opis | Commit |
+|-------|------|--------|
+| ✅ 3.0 | Skonfigurowano husky + lint-staged uruchamiające lintowanie przed commitem dla kodu JS | [Link do commita 1 (3.0)]() |
+| ✅ 3.5 | Wyeliminowano bugi zidentyfikowane przez Sonar/linter w kodzie aplikacji klienckiej | [Link do commita 2 (3.5)]() |
