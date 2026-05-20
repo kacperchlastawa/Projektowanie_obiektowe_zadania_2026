@@ -137,3 +137,9 @@ Proszę napisać prostą aplikację w Vaporze, wykorzystując Leaf jako silnik s
 | ✅ 3.5 | Stworzenie szablonów w Leaf dla modelu Produktów | [Link do commita 2 (3.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/ddc7935fe1dee0494bbf23ed668ebc3d2aabc35d) |
 | ✅ 4.0 | Stworzenie drugiego modelu (Kategorii) oraz kontrolera wraz z relacją do Produktów (Jeden-do-Wielu) | [Link do commita 3 (4.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/564f66cade5e408615749b100d0a1301647b952c)|
 | ✅ 4.5 | Wykorzystanie bazy Redis do buforowania list danych (Cache) dla optymalizacji odczytu | [Link do commita 4 (4.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/cd2121baa752b50704f4b94cc443037e192df428) |
+
+film : 
+
+https://github.com/user-attachments/assets/34e2ec68-f191-4821-af4c-a302458b9501
+
+
