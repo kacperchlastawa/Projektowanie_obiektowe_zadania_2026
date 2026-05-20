@@ -123,3 +123,17 @@ Należy sprawdzić kod projektów JS, Kotlin, Go pod kątem jakości. Na ten mom
 |-------|------|--------|
 | ✅ 3.0 | Skonfigurowano husky + lint-staged uruchamiające lintowanie przed commitem dla kodu JS | [Link do commita 1 (3.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/70fa2e47e5d318898444638d311767918e0f2623) |
 | ✅ 3.5 | Wyeliminowano bugi zidentyfikowane przez Sonar/linter w kodzie aplikacji klienckiej | [Link do commita 2 (3.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/70fa2e47e5d318898444638d311767918e0f2623) |
+
+----------------
+# Zadanie 7 - Wzorce aplikacji webowych
+
+## Swift (Vapor)
+
+Proszę napisać prostą aplikację w Vaporze, wykorzystując Leaf jako silnik szablonów oraz Fluent jako ORM. Należy stworzyć kontrolery wraz z modelami, posiadające relacje i zgodne z CRUD. Całość musi mieć odzwierciedlenie w szablonach (widokach), a dodatkowo wybrane dane powinny być cache'owane w systemie Redis. Aplikacja wdrożona w środowisku Docker.
+
+| Ocena | Opis | Commit |
+|-------|------|--------|
+| ✅ 3.0 | Stworzenie kontrolera wraz z modelem Produktów zgodnego z CRUD w ORM Fluent | Wpisz link |
+| ✅ 3.5 | Stworzenie szablonów w Leaf dla modelu Produktów | Wpisz link |
+| ✅ 4.0 | Stworzenie drugiego modelu (Kategorii) oraz kontrolera wraz z relacją do Produktów (Jeden-do-Wielu) | Wpisz link |
+| ✅ 4.5 | Wykorzystanie bazy Redis do buforowania list danych (Cache) dla optymalizacji odczytu | Wpisz link |
