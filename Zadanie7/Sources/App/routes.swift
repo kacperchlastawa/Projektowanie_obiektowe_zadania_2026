@@ -5,6 +5,8 @@ func routes(_ app: Application) throws {
         "Welcome to Vapor App"
     }
 
+    try app.register(collection: CategoryController())
     try app.register(collection: ProductController())
+    try app.register(collection: CategoryWebController())
     try app.register(collection: ProductWebController())
 }

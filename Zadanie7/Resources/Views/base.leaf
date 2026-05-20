@@ -14,14 +14,15 @@
         .btn { padding: 5px 10px; text-decoration: none; background: #eee; color: #333; border: 1px solid #ccc; cursor: pointer; border-radius: 3px; }
         .form-group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; }
-        input[type="text"], input[type="number"], textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+        input[type="text"], input[type="number"], textarea, select { width: 100%; padding: 8px; box-sizing: border-box; }
     </style>
 </head>
 <body>
     <div class="container">
         <nav>
             <a href="/">Strona Główna (JSON)</a>
-            <a href="/web/products">Lista Produktów (Leaf)</a>
+            <a href="/web/products">Lista Produktów</a>
+            <a href="/web/categories">Lista Kategorii</a>
         </nav>
         
         #import("content")

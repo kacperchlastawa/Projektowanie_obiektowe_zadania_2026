@@ -1,0 +1,14 @@
+#extend("base"):
+    #export("content"):
+        <h2>Dodaj Kategorię</h2>
+        
+        <form method="POST" action="/web/categories/create">
+            <div class="form-group">
+                <label>Nazwa:</label>
+                <input type="text" name="name" required>
+            </div>
+            <button type="submit" class="btn">Zapisz</button>
+            <a href="/web/categories" class="btn">Anuluj</a>
+        </form>
+    #endexport
+#endextend

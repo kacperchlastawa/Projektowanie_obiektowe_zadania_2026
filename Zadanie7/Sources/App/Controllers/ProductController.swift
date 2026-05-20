@@ -15,19 +15,27 @@ struct ProductController: RouteCollection {
 
     @Sendable
     func index(req: Request) async throws -> [Product] {
-        try await Product.query(on: req.db).all()
+        try await Product.query(on: req.db).with(\.$category).all()
+    }
+
+    struct ProductDTO: Content {
+        var name: String
+        var price: Double
+        var description: String
+        var category_id: UUID
     }
 
     @Sendable
     func create(req: Request) async throws -> Product {
-        let product = try req.content.decode(Product.self)
+        let data = try req.content.decode(ProductDTO.self)
+        let product = Product(name: data.name, price: data.price, description: data.description, categoryID: data.category_id)
         try await product.save(on: req.db)
         return product
     }
 
     @Sendable
     func show(req: Request) async throws -> Product {
-        guard let product = try await Product.find(req.parameters.get("productID"), on: req.db) else {
+        guard let product = try await Product.query(on: req.db).filter(\.$id == req.parameters.get("productID")!).with(\.$category).first() else {
             throw Abort(.notFound)
         }
         return product
@@ -35,13 +43,14 @@ struct ProductController: RouteCollection {
 
     @Sendable
     func update(req: Request) async throws -> Product {
-        let updatedProduct = try req.content.decode(Product.self)
+        let data = try req.content.decode(ProductDTO.self)
         guard let product = try await Product.find(req.parameters.get("productID"), on: req.db) else {
             throw Abort(.notFound)
         }
-        product.name = updatedProduct.name
-        product.price = updatedProduct.price
-        product.description = updatedProduct.description
+        product.name = data.name
+        product.price = data.price
+        product.description = data.description
+        product.$category.id = data.category_id
         try await product.save(on: req.db)
         return product
     }

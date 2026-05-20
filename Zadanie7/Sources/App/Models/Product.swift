@@ -16,12 +16,16 @@ final class Product: Model, Content, @unchecked Sendable {
     @Field(key: "description")
     var description: String
 
+    @Parent(key: "category_id")
+    var category: Category
+
     init() { }
 
-    init(id: UUID? = nil, name: String, price: Double, description: String) {
+    init(id: UUID? = nil, name: String, price: Double, description: String, categoryID: Category.IDValue) {
         self.id = id
         self.name = name
         self.price = price
         self.description = description
+        self.$category.id = categoryID
     }
 }

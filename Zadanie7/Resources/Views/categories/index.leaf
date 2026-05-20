@@ -1,0 +1,30 @@
+#extend("base"):
+    #export("content"):
+        <h2>Kategorie</h2>
+        <a href="/web/categories/create" class="btn">Dodaj nową kategorię</a>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nazwa</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                #for(category in categories):
+                    <tr>
+                        <td>#(category.id)</td>
+                        <td><a href="/web/categories/#(category.id)">#(category.name)</a></td>
+                        <td>
+                            <a href="/web/categories/#(category.id)/edit" class="btn">Edytuj</a>
+                            <form method="POST" action="/web/categories/#(category.id)/delete" style="display:inline;">
+                                <button type="submit" class="btn" onclick="return confirm('Na pewno usunąć?');">Usuń</button>
+                            </form>
+                        </td>
+                    </tr>
+                #endfor
+            </tbody>
+        </table>
+    #endexport
+#endextend

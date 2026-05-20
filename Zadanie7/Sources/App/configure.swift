@@ -11,6 +11,7 @@ public func configure(_ app: Application) async throws {
     app.databases.use(.sqlite(.file("db.sqlite")), as: .sqlite)
 
     // Register migrations
+    app.migrations.add(CreateCategory())
     app.migrations.add(CreateProduct())
 
     // Auto migrate on startup

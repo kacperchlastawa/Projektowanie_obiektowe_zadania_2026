@@ -5,6 +5,7 @@
         <p><strong>ID:</strong> #(product.id)</p>
         <p><strong>Nazwa:</strong> #(product.name)</p>
         <p><strong>Cena:</strong> #(product.price) PLN</p>
+        <p><strong>Kategoria:</strong> <a href="/web/categories/#(product.category.id)">#(product.category.name)</a></p>
         <p><strong>Opis:</strong> #(product.description)</p>
         
         <br>
