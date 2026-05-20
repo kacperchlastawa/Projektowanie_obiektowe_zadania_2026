@@ -1,5 +1,6 @@
 import Vapor
 import Fluent
+import Redis
 
 struct ProductController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
@@ -15,7 +16,13 @@ struct ProductController: RouteCollection {
 
     @Sendable
     func index(req: Request) async throws -> [Product] {
-        try await Product.query(on: req.db).with(\.$category).all()
+        if let cached = try await req.redis.get("products", asJSON: [Product].self) {
+            req.logger.info("Pobrano z Redis Cache!")
+            return cached
+        }
+        let products = try await Product.query(on: req.db).with(\.$category).all()
+        try await req.redis.set("products", toJSON: products)
+        return products
     }
 
     struct ProductDTO: Content {
@@ -30,6 +37,7 @@ struct ProductController: RouteCollection {
         let data = try req.content.decode(ProductDTO.self)
         let product = Product(name: data.name, price: data.price, description: data.description, categoryID: data.category_id)
         try await product.save(on: req.db)
+        _ = try await req.redis.delete("products")
         return product
     }
 
@@ -52,6 +60,7 @@ struct ProductController: RouteCollection {
         product.description = data.description
         product.$category.id = data.category_id
         try await product.save(on: req.db)
+        _ = try await req.redis.delete("products")
         return product
     }
 
@@ -61,6 +70,7 @@ struct ProductController: RouteCollection {
             throw Abort(.notFound)
         }
         try await product.delete(on: req.db)
+        _ = try await req.redis.delete("products")
         return .noContent
     }
 }

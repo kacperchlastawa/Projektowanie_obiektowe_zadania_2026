@@ -1,5 +1,6 @@
 import Vapor
 import Fluent
+import Redis
 
 struct CategoryController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
@@ -15,13 +16,20 @@ struct CategoryController: RouteCollection {
 
     @Sendable
     func index(req: Request) async throws -> [Category] {
-        try await Category.query(on: req.db).all()
+        if let cached = try await req.redis.get("categories", asJSON: [Category].self) {
+            req.logger.info("Pobrano z Redis Cache!")
+            return cached
+        }
+        let categories = try await Category.query(on: req.db).all()
+        try await req.redis.set("categories", toJSON: categories)
+        return categories
     }
 
     @Sendable
     func create(req: Request) async throws -> Category {
         let category = try req.content.decode(Category.self)
         try await category.save(on: req.db)
+        _ = try await req.redis.delete("categories")
         return category
     }
 
@@ -41,6 +49,7 @@ struct CategoryController: RouteCollection {
         }
         category.name = updatedCategory.name
         try await category.save(on: req.db)
+        _ = try await req.redis.delete("categories")
         return category
     }
 
@@ -50,6 +59,7 @@ struct CategoryController: RouteCollection {
             throw Abort(.notFound)
         }
         try await category.delete(on: req.db)
+        _ = try await req.redis.delete("categories")
         return .noContent
     }
 }

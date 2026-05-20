@@ -18,7 +18,14 @@ struct CategoryWebController: RouteCollection {
     
     @Sendable
     func index(req: Request) async throws -> View {
-        let categories = try await Category.query(on: req.db).all()
+        let categories: [Category]
+        if let cached = try await req.redis.get("categories", asJSON: [Category].self) {
+            req.logger.info("Web: Pobrano z Redis Cache!")
+            categories = cached
+        } else {
+            categories = try await Category.query(on: req.db).all()
+            try await req.redis.set("categories", toJSON: categories)
+        }
         return try await req.view.render("categories/index", ["categories": categories])
     }
     
@@ -31,6 +38,7 @@ struct CategoryWebController: RouteCollection {
     func createPostHandler(req: Request) async throws -> Response {
         let data = try req.content.decode(Category.self)
         try await data.save(on: req.db)
+        _ = try await req.redis.delete("categories")
         return req.redirect(to: "/web/categories")
     }
     
@@ -58,6 +66,7 @@ struct CategoryWebController: RouteCollection {
         }
         category.name = updatedCategory.name
         try await category.save(on: req.db)
+        _ = try await req.redis.delete("categories")
         return req.redirect(to: "/web/categories/\(category.id!)")
     }
     
@@ -67,6 +76,7 @@ struct CategoryWebController: RouteCollection {
             throw Abort(.notFound)
         }
         try await category.delete(on: req.db)
+        _ = try await req.redis.delete("categories")
         return req.redirect(to: "/web/categories")
     }
 }

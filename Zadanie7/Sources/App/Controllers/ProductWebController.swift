@@ -18,7 +18,14 @@ struct ProductWebController: RouteCollection {
     
     @Sendable
     func index(req: Request) async throws -> View {
-        let products = try await Product.query(on: req.db).with(\.$category).all()
+        let products: [Product]
+        if let cached = try await req.redis.get("products", asJSON: [Product].self) {
+            req.logger.info("Web: Pobrano z Redis Cache!")
+            products = cached
+        } else {
+            products = try await Product.query(on: req.db).with(\.$category).all()
+            try await req.redis.set("products", toJSON: products)
+        }
         return try await req.view.render("products/index", ["products": products])
     }
     
@@ -43,6 +50,7 @@ struct ProductWebController: RouteCollection {
         let data = try req.content.decode(CreateProductData.self)
         let product = Product(name: data.name, price: data.price, description: data.description, categoryID: data.category_id)
         try await product.save(on: req.db)
+        _ = try await req.redis.delete("products")
         return req.redirect(to: "/web/products")
     }
     
@@ -78,6 +86,7 @@ struct ProductWebController: RouteCollection {
         product.description = data.description
         product.$category.id = data.category_id
         try await product.save(on: req.db)
+        _ = try await req.redis.delete("products")
         return req.redirect(to: "/web/products/\(product.id!)")
     }
     
@@ -87,6 +96,7 @@ struct ProductWebController: RouteCollection {
             throw Abort(.notFound)
         }
         try await product.delete(on: req.db)
+        _ = try await req.redis.delete("products")
         return req.redirect(to: "/web/products")
     }
 }
