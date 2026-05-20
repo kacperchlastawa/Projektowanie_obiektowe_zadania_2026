@@ -129,11 +129,11 @@ Należy sprawdzić kod projektów JS, Kotlin, Go pod kątem jakości. Na ten mom
 
 ## Swift (Vapor)
 
-Proszę napisać prostą aplikację w Vaporze, wykorzystując Leaf jako silnik szablonów oraz Fluent jako ORM. Należy stworzyć kontrolery wraz z modelami, posiadające relacje i zgodne z CRUD. Całość musi mieć odzwierciedlenie w szablonach (widokach), a dodatkowo wybrane dane powinny być cache'owane w systemie Redis. Aplikacja wdrożona w środowisku Docker.
+Proszę napisać prostą aplikację w Vaporze, wykorzystując Leaf jako silnik szablonów oraz Fluent jako ORM. Należy stworzyć kontrolery wraz z modelami, posiadające relacje i zgodne z CRUD.
 
 | Ocena | Opis | Commit |
 |-------|------|--------|
-| ✅ 3.0 | Stworzenie kontrolera wraz z modelem Produktów zgodnego z CRUD w ORM Fluent | Wpisz link |
-| ✅ 3.5 | Stworzenie szablonów w Leaf dla modelu Produktów | Wpisz link |
-| ✅ 4.0 | Stworzenie drugiego modelu (Kategorii) oraz kontrolera wraz z relacją do Produktów (Jeden-do-Wielu) | Wpisz link |
-| ✅ 4.5 | Wykorzystanie bazy Redis do buforowania list danych (Cache) dla optymalizacji odczytu | Wpisz link |
+| ✅ 3.0 | Stworzenie kontrolera wraz z modelem Produktów zgodnego z CRUD w ORM Fluent | [Link do commita 1 (3.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/29a356504b985b2d8a4cbd4583aa238c7ac2b677) |
+| ✅ 3.5 | Stworzenie szablonów w Leaf dla modelu Produktów | [Link do commita 2 (3.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/ddc7935fe1dee0494bbf23ed668ebc3d2aabc35d) |
+| ✅ 4.0 | Stworzenie drugiego modelu (Kategorii) oraz kontrolera wraz z relacją do Produktów (Jeden-do-Wielu) | [Link do commita 3 (4.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/564f66cade5e408615749b100d0a1301647b952c)|
+| ✅ 4.5 | Wykorzystanie bazy Redis do buforowania list danych (Cache) dla optymalizacji odczytu | [Link do commita 4 (4.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/cd2121baa752b50704f4b94cc443037e192df428) |
