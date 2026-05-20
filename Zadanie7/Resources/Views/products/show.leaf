@@ -1,0 +1,14 @@
+#extend("base"):
+    #export("content"):
+        <h2>Szczegóły Produktu</h2>
+        
+        <p><strong>ID:</strong> #(product.id)</p>
+        <p><strong>Nazwa:</strong> #(product.name)</p>
+        <p><strong>Cena:</strong> #(product.price) PLN</p>
+        <p><strong>Opis:</strong> #(product.description)</p>
+        
+        <br>
+        <a href="/web/products/#(product.id)/edit" class="btn">Edytuj</a>
+        <a href="/web/products" class="btn">Wróć do listy</a>
+    #endexport
+#endextend

@@ -1,0 +1,22 @@
+#extend("base"):
+    #export("content"):
+        <h2>Dodaj Produkt</h2>
+        
+        <form method="POST" action="/web/products/create">
+            <div class="form-group">
+                <label>Nazwa:</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Cena:</label>
+                <input type="number" step="0.01" name="price" required>
+            </div>
+            <div class="form-group">
+                <label>Opis:</label>
+                <textarea name="description" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn">Zapisz</button>
+            <a href="/web/products" class="btn">Anuluj</a>
+        </form>
+    #endexport
+#endextend
