@@ -143,3 +143,17 @@ film :
 https://github.com/user-attachments/assets/34e2ec68-f191-4821-af4c-a302458b9501
 
 
+----------------
+# Zadanie 8 - Testy automatyczne i bezpieczeństwo
+
+## Selenium / Webdriver (JavaScript / Node.js)
+
+Zadanie zrealizowano jako rozszerzenie aplikacji z Reactem (Zadanie 5). Dodano nowe komponenty oraz zaimplementowano skrypty testowe oparte na Selenium.
+
+| Ocena | Opis |
+|-------|------|
+| ✅ 3.0 | Przetestowano formularz rejestracji użytkownika pod kątem walidacji pól obowiązkowych oraz niepoprawnego adresu e-mail (`test_rejestracja.js`) |
+| ✅ 3.5 | Przeprowadzono testy bezpieczeństwa XSS; wstrzyknięto złośliwy kod w podatnym komponencie i wywołano alert (`test_xss.js`) |
+| ✅ 4.0 | Zmodyfikowano Context API do użycia `localStorage` oraz eventu `storage` i przetestowano w wielu kartach zachowanie koszyka (`test_cart_tabs.js`) |
+| ⬜ 4.5 | CSRF i dodanie formularza logowania (Nie zrealizowano) |
+| ⬜ 5.0 | Scenariusz End-to-End w Playwright (Nie zrealizowano) |
