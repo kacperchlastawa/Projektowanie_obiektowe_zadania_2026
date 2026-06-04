@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, useEffect } from 'react';
 import type { ReactNode } from 'react';
 
 export interface Product {
@@ -21,17 +21,46 @@ interface CartContextType {
 export const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    const saved = localStorage.getItem('cartItems');
+    if (saved) {
+      try {
+        return JSON.parse(saved);
+      } catch {
+        return [];
+      }
+    }
+    return [];
+  });
+
+  // Nasłuchiwanie na zmiany w localStorage wywołane w innych kartach
+  useEffect(() => {
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === 'cartItems' && e.newValue) {
+        try {
+          setCartItems(JSON.parse(e.newValue));
+        } catch {
+          // błąd parsowania
+        }
+      }
+    };
+    window.addEventListener('storage', handleStorage);
+    return () => window.removeEventListener('storage', handleStorage);
+  }, []);
 
   const addToCart = (product: Product) => {
     setCartItems(prevItems => {
+      let newItems;
       const existing = prevItems.find(item => item.id === product.id);
       if (existing) {
-        return prevItems.map(item =>
+        newItems = prevItems.map(item =>
           item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
         );
+      } else {
+        newItems = [...prevItems, { ...product, quantity: 1 }];
       }
-      return [...prevItems, { ...product, quantity: 1 }];
+      localStorage.setItem('cartItems', JSON.stringify(newItems));
+      return newItems;
     });
   };
 
