@@ -35,7 +35,13 @@ const Rejestracja = () => {
   return (
     <div style={{ maxWidth: '400px', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px' }}>
       <h2>Rejestracja</h2>
-      {success && <div id="success-message" style={{ color: 'green', marginBottom: '10px' }}>Rejestracja zakończona sukcesem!</div>}
+      {success && (
+        <div id="success-message" style={{ color: 'green', marginBottom: '10px' }}>
+          Rejestracja zakończona sukcesem!
+          {/* PODATNOŚĆ XSS - renderowanie nazwy użytkownika jako niesprawdzonego HTML */}
+          <div id="welcome-message" dangerouslySetInnerHTML={{ __html: `Witaj, ${formData.username}!` }} />
+        </div>
+      )}
       {errors.length > 0 && (
         <div id="error-messages" style={{ color: 'red', marginBottom: '10px' }}>
           <ul>
