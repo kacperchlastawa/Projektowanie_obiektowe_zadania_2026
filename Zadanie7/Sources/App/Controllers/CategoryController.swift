@@ -50,6 +50,7 @@ struct CategoryController: RouteCollection {
         category.name = updatedCategory.name
         try await category.save(on: req.db)
         _ = try await req.redis.delete("categories")
+        _ = try await req.redis.delete("products")
         return category
     }
 
@@ -60,6 +61,7 @@ struct CategoryController: RouteCollection {
         }
         try await category.delete(on: req.db)
         _ = try await req.redis.delete("categories")
+        _ = try await req.redis.delete("products")
         return .noContent
     }
 }

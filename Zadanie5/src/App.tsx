@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Produkty from './components/Produkty';
 import Platnosci from './components/Platnosci';
 import Koszyk from './components/Koszyk';
+import Rejestracja from './components/Rejestracja';
 import { CartProvider } from './context/CartContext';
 import './App.css';
 
@@ -18,6 +19,7 @@ function App() {
               <li><Link to="/">Produkty</Link></li>
               <li><Link to="/koszyk">Koszyk</Link></li>
               <li><Link to="/platnosci">Płatności</Link></li>
+              <li><Link to="/rejestracja">Rejestracja</Link></li>
             </ul>
           </nav>
 
@@ -26,6 +28,7 @@ function App() {
             <Route path="/" element={<Produkty />} />
             <Route path="/koszyk" element={<Koszyk />} />
             <Route path="/platnosci" element={<Platnosci />} />
+            <Route path="/rejestracja" element={<Rejestracja />} />
           </Routes>
         </div>
       </Router>
