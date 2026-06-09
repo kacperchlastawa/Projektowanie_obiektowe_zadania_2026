@@ -44,3 +44,16 @@ jobs:
           context: ./Zadanie5
           push: true
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend:latest
+
+      - name: Send email notification on build success (Punkt 4.0)
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: Github Actions - Obrazy zbudowane pomyślnie
+          to: ${{ secrets.MAIL_TO }}
+          from: GitHub Actions
+          body: Obrazy aplikacji z Zadania 5 zostały poprawnie zbudowane i wysłane do GHCR!
