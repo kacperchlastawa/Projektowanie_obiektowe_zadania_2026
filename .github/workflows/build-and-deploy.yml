@@ -47,6 +47,7 @@ jobs:
 
       - name: Send email notification on build success (Punkt 4.0)
         uses: dawidd6/action-send-mail@v3
+        continue-on-error: true
         with:
           server_address: smtp.gmail.com
           server_port: 465
@@ -54,6 +55,6 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: Github Actions - Obrazy zbudowane pomyślnie
-          to: ${{ secrets.MAIL_TO }}
+          to: ${{ secrets.MAIL_TO != '' && secrets.MAIL_TO || 'student@example.com' }}
           from: GitHub Actions
           body: Obrazy aplikacji z Zadania 5 zostały poprawnie zbudowane i wysłane do GHCR!
