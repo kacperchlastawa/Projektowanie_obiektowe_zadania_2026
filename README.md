@@ -4,7 +4,7 @@
 
 | Ocena | Opis | Commit |
 |-------|------|--------|
-| ✅ 3.0 | Procedura do generowania 50 losowych liczb od 0 do 100 | [Link do commita 1 (3.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/37622463ab292535c29d2da251791f1cd81c9f93) |
+| ✅ 3.0 | Procedura do generowania 50 losowych liczb od 0 do 100 |[Link do commita 1 (3.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/37622463ab292535c29d2da251791f1cd81c9f93)|
 | ✅ 3.5 | Procedura do sortowania liczb | [Link do commita 2 (3.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/321aa322522ce7302a0ab4c449af70fa65666d31) |
 | ✅ 4.0 | Dodanie parametrów do procedury losującej określającymi zakres losowania: od, do, ile | [Link do commita 3 (4.0)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/f41754581d1bd4552e7d64fae944a822d587c0ca) |
 | ✅ 4.5 | Testy jednostkowe testujące procedury | [Link do commita 4 (4.5)](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/65341ac9a2348a06abc0b4b0ceda1a96d9ec785d) |
@@ -163,15 +163,13 @@ Zadanie zrealizowano jako rozszerzenie aplikacji z Reactem (Zadanie 5). Dodano n
 
 ## Docker i CI/CD (GitHub Actions)
 
-Rozszerzenie zadania 5 o zautomatyzowane utworzenie instancji w chmurze (AWS EC2) oraz proces ciągłej integracji i budowania obrazów (CI).
-
-| Ocena | Opis |
-|-------|------|
-| ✅ 3.0 | Skrypt IaC (AWS CLI/PowerShell) `create_ec2.ps1` przygotowujący maszynę EC2 wraz z instalacją Dockera (folder `Zadanie10`) |
-| ✅ 3.5 | Skonfigurowano pipeline GitHub Actions (`build-and-deploy.yml`) budujący obrazy Dockera dla frontendu i backendu i wysyłający je do GHCR |
-| ✅ 4.0 | Dodano krok w Actions powiadamiający e-mailem o poprawnym zbudowaniu obrazów z mechanizmem `continue-on-error` w razie braku poświadczeń SMTP |
-| ⬜ 4.5 | Dodać krok z deploymentem (Ominięto) |
-| ⬜ 5.0 | Regresyjne testy (Ominięto) |
+| Ocena | Opis |Commit|
+|-------|------|-------|
+| ✅ 3.0 | Skrypt IaC (AWS CLI/PowerShell) `create_ec2.ps1` przygotowujący maszynę EC2 wraz z instalacją Dockera (folder `Zadanie10`) |[Link do commita 1](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/624c83356095cf38075e5c9221b60e0bd146d7b4)|
+| ✅ 3.5 | Skonfigurowano pipeline GitHub Actions (`build-and-deploy.yml`) budujący obrazy Dockera dla frontendu i backendu i wysyłający je do GHCR |[Link do commita 2](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/tree/28fc13cdd300a6a46be397479e6d5e2ac6835119)|
+| ✅ 4.0 | Dodano krok w Actions powiadamiający e-mailem o poprawnym zbudowaniu obrazów z mechanizmem `continue-on-error` w razie braku poświadczeń SMTP |[Link do commita 3](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/commit/d63b9808b9819c6e1651f9dde5b3207f72b62452)|
+| ⬜ 4.5 | Dodać krok z deploymentem (Ominięto) ||
+| ⬜ 5.0 | Regresyjne testy (Ominięto) ||
 
 
 
