@@ -157,3 +157,26 @@ Zadanie zrealizowano jako rozszerzenie aplikacji z Reactem (Zadanie 5). Dodano n
 | ✅ 4.0 | Zmodyfikowano Context API do użycia `localStorage` oraz eventu `storage` i przetestowano w wielu kartach zachowanie koszyka (`test_cart_tabs.js`) |[Link do commita 3](https://github.com/kacperchlastawa/Projektowanie_obiektowe_zadania_2026/commit/5e71f33e9bc448da92e08f6326b0a8d32c89c976) |
 | ⬜ 4.5 | CSRF i dodanie formularza logowania (Nie zrealizowano) |
 | ⬜ 5.0 | Scenariusz End-to-End w Playwright (Nie zrealizowano) |
+
+----------------
+# Zadanie 10 - Chmura
+
+## Docker i CI/CD (GitHub Actions)
+
+Rozszerzenie zadania 5 o zautomatyzowane utworzenie instancji w chmurze (AWS EC2) oraz proces ciągłej integracji i budowania obrazów (CI).
+
+| Ocena | Opis |
+|-------|------|
+| ✅ 3.0 | Skrypt IaC (AWS CLI/PowerShell) `create_ec2.ps1` przygotowujący maszynę EC2 wraz z instalacją Dockera (folder `Zadanie10`) |
+| ✅ 3.5 | Skonfigurowano pipeline GitHub Actions (`build-and-deploy.yml`) budujący obrazy Dockera dla frontendu i backendu i wysyłający je do GHCR |
+| ✅ 4.0 | Dodano krok w Actions powiadamiający e-mailem o poprawnym zbudowaniu obrazów z mechanizmem `continue-on-error` w razie braku poświadczeń SMTP |
+| ⬜ 4.5 | Dodać krok z deploymentem (Ominięto) |
+| ⬜ 5.0 | Regresyjne testy (Ominięto) |
+
+### Jak przetestować:
+* **Testowanie 3.0**: Należy przejść do nowo utworzonego folderu `Zadanie10` i wywołać w PowerShellu (posiadając skonfigurowane konto AWS CLI) skrypt poleceniem: `powershell -ExecutionPolicy Bypass -File .\create_ec2.ps1`. Skrypt sam założy bezpieczne porty i przygotuje w tle instalację Dockera.
+* **Testowanie 3.5 i 4.0**: Należy wejść w przeglądarce w swoje repozytorium na Githubie, kliknąć w zakładkę **Actions** u góry i po lewej stronie wejść w zakładkę "CI/CD Pipeline (Zadanie 10)". Każdy kolejny `git push` z poziomu gałęzi głównej uruchomi widoczny tam przepływ. Można kliknąć w uruchomione zadanie i na żywo oglądać kroki:
+  1. Pobieranie kodu.
+  2. Budowanie obrazów Dockera za pomocą zdefiniowanego Dockerfile.
+  3. Symulację wysłania maila (Krok pomyślnie zignoruje błąd braku ustawionego w Secrets maila, tak aby pipeline zawsze przeszedł na zielono dla celów akademickich).
+
