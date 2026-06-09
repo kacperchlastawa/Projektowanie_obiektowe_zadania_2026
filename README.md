@@ -173,10 +173,5 @@ Rozszerzenie zadania 5 o zautomatyzowane utworzenie instancji w chmurze (AWS EC2
 | ⬜ 4.5 | Dodać krok z deploymentem (Ominięto) |
 | ⬜ 5.0 | Regresyjne testy (Ominięto) |
 
-### Jak przetestować:
-* **Testowanie 3.0**: Należy przejść do nowo utworzonego folderu `Zadanie10` i wywołać w PowerShellu (posiadając skonfigurowane konto AWS CLI) skrypt poleceniem: `powershell -ExecutionPolicy Bypass -File .\create_ec2.ps1`. Skrypt sam założy bezpieczne porty i przygotuje w tle instalację Dockera.
-* **Testowanie 3.5 i 4.0**: Należy wejść w przeglądarce w swoje repozytorium na Githubie, kliknąć w zakładkę **Actions** u góry i po lewej stronie wejść w zakładkę "CI/CD Pipeline (Zadanie 10)". Każdy kolejny `git push` z poziomu gałęzi głównej uruchomi widoczny tam przepływ. Można kliknąć w uruchomione zadanie i na żywo oglądać kroki:
-  1. Pobieranie kodu.
-  2. Budowanie obrazów Dockera za pomocą zdefiniowanego Dockerfile.
-  3. Symulację wysłania maila (Krok pomyślnie zignoruje błąd braku ustawionego w Secrets maila, tak aby pipeline zawsze przeszedł na zielono dla celów akademickich).
+
 
